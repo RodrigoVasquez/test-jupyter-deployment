@@ -25,14 +25,14 @@ module "vpc" {
 module "subnets" {
   source  = "../../modules/subnet"
   project_id = "${var.project}"
-  network = "${module.vpc.network}"
+  network = "${module.vpc.network.network_name}"
 }
 
 module "workload-identity" {
   source            = "../../modules/workload-identity"
-  project_id          = "${var.project}"
+  project_id        = "${var.project}"
   region            = "${var.region}"
-  network           = "${module.vpc.network}"
+  network           = "${module.vpc.network.network_name}"
   subnetwork        = "${module.subnets.subnet_gke}"
   ip_range_pods     = "${module.subnets.subnet_gke.subnet_ip}"
   ip_range_services = "${module.subnets.subnet_gke.secondary_ranges.ip_cidr_range}"
