@@ -18,9 +18,9 @@ output "network" {
 }
 
 output "subnet" {
-  value = "${element(module.vpc.subnets_names, 0)}"
+  value = "${element(module.vpc.subnets, 0)}"
 }
 
 output "subnet_gke" {
-  value = "${element(module.vpc.subnets_names, 1)}"
+  value = "${element(module.vpc.subnets, 1)}"
 }

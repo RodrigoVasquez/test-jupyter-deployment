@@ -14,7 +14,7 @@
 
 
 module "vpc" {
-  source  = "terraform-google-modules/network/google"
+  source  = "terraform-google-modules/network/google//modules/subnets"
   version = "~> 3.0"
   
   project_id   = "${var.project}"
