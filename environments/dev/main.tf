@@ -23,7 +23,7 @@ module "vpc" {
 }
 
 module "subnets" {
-  source  = "../../modules/subnets"
+  source  = "../../modules/subnet"
   project = "${var.project}"
   network = "${module.vpc.network}"
 }
