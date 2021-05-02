@@ -20,3 +20,7 @@ output "network" {
 output "subnet" {
   value = "${element(module.vpc.subnets_names, 0)}"
 }
+
+output "subnet_gke" {
+  value = "${element(module.vpc.subnets_names, 1)}"
+}

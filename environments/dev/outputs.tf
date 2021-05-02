@@ -21,14 +21,20 @@ output "subnet" {
   value = "${module.vpc.subnet}"
 }
 
-output "firewall_rule" {
-  value = "${module.firewall.firewall_rule}"
+output "cluster_name" {
+  value = "${module.workload-identity.cluster_name}"
 }
 
-output "instance_name" {
-  value = "${module.http_server.instance_name}"
+output "k8s_service_account_email" {
+  value = "${module.workload-identity.k8s_service_account_email}"
 }
 
-output "external_ip" {
-  value = "${module.http_server.external_ip}"
+output "k8s_service_account_name" {
+  value = "${module.workload-identity.k8s_service_account_name}"
 }
+
+output "gke-location" {
+  value = "${module.workload-identity.location}"
+}
+
+

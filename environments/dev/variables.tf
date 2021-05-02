@@ -13,4 +13,12 @@
 # limitations under the License.
 
 
-variable "project" {}
+variable "project" {
+    description = "GCP Project"
+    default     = "testing-jupyter-2810"
+}
+
+variable "region" {
+    description = "The region to host the cluster in",
+    default     = "us-east1"
+}
