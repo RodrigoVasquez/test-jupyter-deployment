@@ -18,11 +18,6 @@ locals {
   cluster_type = "regional"
 }
 
-provider "google" {
-  version= "~> 3.42.0"
-  region = "us-east1"
-}
-
 data "google_client_config" "default" {}
 
 provider "kubernetes" {
