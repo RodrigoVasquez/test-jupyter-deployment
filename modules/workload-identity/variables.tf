@@ -43,7 +43,3 @@ variable "ip_range_pods" {
 variable "ip_range_services" {
   description = "The secondary ip range to use for pods"
 }
-
-variable "subnet_gke" {
-  description = "The subnetwork to host the cluster in"
-}

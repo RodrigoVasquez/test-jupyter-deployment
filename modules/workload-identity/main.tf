@@ -33,7 +33,7 @@ module "gke" {
   name                     = "${local.cluster_type}-cluster${var.cluster_name_suffix}"
   region                   = var.region
   network                  = var.network
-  subnetwork               = var.subnet_gke
+  subnetwork               = var.subnetwork
   ip_range_pods            = var.ip_range_pods
   ip_range_services        = var.ip_range_services
   remove_default_node_pool = true
