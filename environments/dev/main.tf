@@ -24,7 +24,7 @@ module "vpc" {
 
 module "subnets" {
   source  = "../../modules/subnet"
-  project = "${var.project}"
+  project_id = "${var.project}"
   network = "${module.vpc.network}"
 }
 
