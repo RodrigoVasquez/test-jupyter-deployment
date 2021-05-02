@@ -24,8 +24,7 @@ module "vpc" {
 
 module "workload-identity" {
   source            = "../../modules/workload-identity"
-  project           = "${var.project}"
-  env               = "${local.env}"
+  project_id          = "${var.project}"
   region            = "${var.region}"
   network           = "${module.vpc.network}"
   subnetwork        = "${module.vpc.subnet_gke}"
