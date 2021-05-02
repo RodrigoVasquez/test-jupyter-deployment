@@ -22,15 +22,22 @@ module "vpc" {
 
   subnets = [
     {
-      subnet_name   = "${var.env}-subnet-01"
+      subnet_name   = "${var.env}-subnet"
       subnet_ip     = "10.10.10.0/24"
       subnet_region = "us-east1"
     },
     {
-      subnet_name   = "${var.env}-subnet-gke-02"
+      subnet_name   = "${var.env}-subnet-gke"
       subnet_ip     = "10.20.10.0/24"
       subnet_region = "us-east1"
     }
   ]
+  secondary_ranges = {
+    "${var.env}-subnet-gke" = [
+      {
+            range_name    = "subnet-gke-secondary-01"
+            ip_cidr_range = "192.168.64.0/24"
+        }
+  }
 }
-
+  

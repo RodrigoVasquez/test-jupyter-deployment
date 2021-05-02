@@ -30,4 +30,6 @@ module "workload-identity" {
   region            = "${var.region}"
   network           = "${module.vpc.network}"
   subnetwork        = "${module.vpc.subnet_gke}"
+  ip_range_pods     = "${module.vpc.subnet_gke.subnet_ip}"
+  ip_range_services = "${module.vpc.subnet_gke.secondary_ranges.ip_cidr_range}"
 }
