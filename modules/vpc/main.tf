@@ -37,7 +37,8 @@ module "vpc" {
       {
             range_name    = "subnet-gke-secondary-01"
             ip_cidr_range = "192.168.64.0/24"
-        }
+      }
+    ],
   }
 }
   
