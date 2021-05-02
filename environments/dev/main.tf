@@ -22,12 +22,18 @@ module "vpc" {
   env     = "${local.env}"
 }
 
+module "subnets" {
+  source  = "../../modules/subnets"
+  project = "${var.project}"
+  network = "${module.vpc.network}"
+}
+
 module "workload-identity" {
   source            = "../../modules/workload-identity"
   project_id          = "${var.project}"
   region            = "${var.region}"
   network           = "${module.vpc.network}"
-  subnetwork        = "${module.vpc.subnet_gke}"
-  ip_range_pods     = "${module.vpc.subnet_gke.subnet_ip}"
-  ip_range_services = "${module.vpc.subnet_gke.secondary_ranges.ip_cidr_range}"
+  subnetwork        = "${module.subnets.subnet_gke}"
+  ip_range_pods     = "${module.subnets.subnet_gke.subnet_ip}"
+  ip_range_services = "${module.subnets.subnet_gke.secondary_ranges.ip_cidr_range}"
 }
