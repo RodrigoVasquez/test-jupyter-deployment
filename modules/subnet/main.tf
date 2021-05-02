@@ -15,11 +15,6 @@ module "subnets" {
             subnet_ip             = "10.10.20.0/24"
             subnet_region         = "us-east1"
         },
-        {
-            subnet_name           = "subnet-test"
-            subnet_ip             = "10.10.30.0/24"
-            subnet_region         = "us-east1"
-        }
     ]
 
     secondary_ranges = {

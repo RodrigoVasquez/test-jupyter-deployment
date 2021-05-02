@@ -3,5 +3,5 @@ output "subnet" {
 }
 
 output "subnet_gke" {
-  value = "${element(module.subnets.subnets, 1)}"
+  value = "${module.subnets.subnet-gke}"
 }
