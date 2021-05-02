@@ -12,14 +12,6 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-output "subnet" {
-  value = "${element(module.vpc.subnets, 0)}"
-}
-
-output "subnet_gke" {
-  value = "${element(module.vpc.subnets, 1)}"
-}
-
 output "network" {
   value = "${module.vpc.network}"
 }
