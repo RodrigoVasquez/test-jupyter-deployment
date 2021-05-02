@@ -20,7 +20,7 @@ locals {
 
 provider "google" {
   version= "~> 3.42.0"
-  region = var.region
+  region = "us-east1"
 }
 
 data "google_client_config" "default" {}
