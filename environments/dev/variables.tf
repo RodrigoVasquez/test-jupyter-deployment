@@ -19,6 +19,6 @@ variable "project" {
 }
 
 variable "region" {
-    description = "The region to host the cluster in",
+    description = "The region to host the cluster in"
     default     = "us-east1"
 }
